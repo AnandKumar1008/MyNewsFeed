@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Signika+Negative:wght@300;400&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Signika Negative', sans-serif;
+}
+.news-heading{
+    color: white;
+    background-color: #CD1818;
+    background-color: #068da9;
+    padding: 10px;
+    /* align-items: center; */
+    text-align: center;
+    /* border-radius: 10%; */
+}
+.news-heading h2{
+    margin: 30px 0px;
+}
+.news-heading{
+    padding-bottom: 16px;
+}
+.news-heading span{
+    background-color:#CD1818;
+    /* margin: 20px 0px; */
+    border-radius: 5px;
+    /* margin-bottom: 30px; */
+    padding: 10px;
+}
+img{
+    max-width: 100%;
+    border-radius: 5px;
+}
+.news-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin: 10px 20px;
+}
+i:hover{
+    cursor: pointer;
+}
+.fa-solid{
+    color: red;
+}
+i{
+    color: black;
+}
+.news-detail{
+    display: flex;
+    justify-content: space-between;
+}

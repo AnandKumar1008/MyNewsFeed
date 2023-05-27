@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Signika+Negative:wght@300;400&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Bebas Neue", cursive;
+  font-family: "Signika Negative", sans-serif;
+}
+.top {
+  text-align: center;
+  color: red;
+  letter-spacing: 3px;
+  text-shadow:2px 2px 3px #CD1818 ;
+  font-size: 20px;
+  background-color: #068da9;
+  height: 200px;
+}
+.main-container {
+  display: flex;
+  /* height: 100vh; */
+  justify-content: center;
+  width: 100vw;
+  margin: 0px auto;
+}
+.container {
+  width: 100vw;
+  margin: 0px auto;
+  display: grid;
+  margin: 0 20px;
+  /* display: ; */
+}
+.container h1{
+    text-align: center;
+    margin: 20px 0px;
+    
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #000000;
+}
+h1 {
+  }
+.news-feed {
+  background-color: #CD1818;
+  height: 300px;
+  /* border-radius: 10px; */
+  width: 100vw;
+  padding: 20px;
+}
+.news-feed h2 {
+  align-content: center;
+  text-align: center;
+}
+.head {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.news {
+  display: flex;
+  /* margin-bottom: 20px; */
+}
+.news a {
+  text-decoration: none;
+  color: black;
+}
+.news span {
+  border-radius: 5px;
+  padding: 10px 10px;
+  align-items: center;
+  margin: 40px auto 0px auto;
+  background-color: #a5c0dd;
+}
+.updated {
+  text-align: center;
+  line-height: 3;
+  height: 300px;
+}
+.decorate {
+  color: white;
+  font-size: 40px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

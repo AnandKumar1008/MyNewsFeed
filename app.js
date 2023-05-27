@@ -10,78 +10,15 @@ select.forEach((span)=>{
   //adding event listener to all span elements under topics class
   span.addEventListener('click',()=>{
     select.forEach((element)=>{
-      element.style.backgroundColor="#27E1C1";
+      element.style.backgroundColor="#FF6969";
+      element.style.fontWeight=400;
     });
     atStart(span.textContent.toLowerCase());
 
-    span.style.backgroundColor="lightblue";
+    span.style.backgroundColor="#CD1818";
+    span.style.fontWeight=500;
     addNews.innerHTML='Wait Until it loads....';
-    //Fetching the API Link
-    // fetch(`${url}category=${span.textContent.toLowerCase()}`)
-    // .then((response)=>response.json()).then((data)=>{
-    //   console.log(data);
-    //   // making maindiv element to store all elemnts of the news which are going to fetch
-    //   var mainDiv=document.createElement('div');
-    //   //make empty all earlier news present in the addNews 
-    //    addNews.innerHTML='';
-    //   //looking for all the data 
-    //   for(let x in data.data){
-    //     /// content which will contains all news details
-        
-    //     var content=document.createElement('div');
-    //     const h6=document.createElement('h6');// h6 element which will contains the name of the category
-    //   h6.innerText=`CATEGORY:${data.category.toUpperCase()}`;//putting text under h6 element
-    //     content.classList.add("data");//give class name to the news content
-    //     var div=document.createElement('div');//this div element will contains author and category name
-    //     div.classList.add("news-detail");// giving class name forthe css properties
-    //     var h5=document.createElement('h5');// making h5 element for the author
-    //     h5.innerText=`${data.data[x].author}`;//text of author
-    //     div.append(h5);//adding to new-details class
-    //     div.append(h6);//cateory 
-
-    //     const para=document.createElement('p');
-    //     //making paragraph elemnt for the news content
-    //     para.textContent=data.data[x].content;
-    //    //news content is added to paragraph element
-        
-    //     content.append(div);
-    //     // new heading are added like author and category 
-    //     content.append(para);
-    //    // news content is also appended
-        
-    //     content.setAttribute('id',data.data[x].id);
-    //     // id is added to div element which contains individual news details
-    //     const icon=document.createElement('i');
-    //     icon.className="fa-regular fa-heart";
-    //     // icon tag for the like buttons 
-    //     const savedNews=JSON.parse(localStorage.getItem('savedNews'))||[];
-    //     // if already news is liked forthe like button
-     
-    //     savedNews.forEach((element)=>{
-    //       // checking for the news content which has already been added to local storage or has been liked
-    //       if(element.content===data.data[x].content){
-    //         icon.className="fa-solid fa-heart";
-    //       }
-    //     })
-       
-        
-    //     content.append(icon);
-    //     //icon is appended to content 
-    //     mainDiv.append(content);
-    //     // all are append to one div element
-        
-
-    //   }
-     
-
-    //   addNews.append(mainDiv);
-    //   // finally it is appende to the page
-    //   refresh();
-    //   // this will refresh for the icon button to work properly
-     
-
-    // });
-    
+ 
    });
 
 });
