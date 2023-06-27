@@ -98,29 +98,8 @@ function refresh() {
 }
 // *******************************************************************************************************************************---
 
-const API_KEY = "60365b29851d46a58ec24f1c75e1f275";
-// const category=''
-const url2 = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${API_KEY}`;
-
-const getNews = async (category) => {
-  try {
-    const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
-    );
-    const obj = await response.json();
-    const data = obj.articles;
-    Organise(data, category);
-    // localStorage.setItem("general", JSON.stringify(data));
-  } catch (error) {
-    const data = Allnews[category];
-    Organise(data, category);
-    console.log(error);
-  }
-};
-
-getNews("general");
-//******************************************************************************************************************************* */
 const Organise = (data, category) => {
+  // console.log(data);
   var mainDiv = document.createElement("div");
   addNews.innerHTML = "";
 
@@ -181,3 +160,31 @@ const Organise = (data, category) => {
 
   refresh();
 };
+//****************************************************************************************************** */
+
+const API_KEY = "60365b29851d46a58ec24f1c75e1f275";
+// const category=''
+const url2 = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${API_KEY}`;
+
+const getNews = async (category) => {
+  let data = Allnews[category];
+  Organise(data, category);
+  try {
+    const response = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiey=${API_KEY}`
+    );
+    const obj = await response.json();
+    data = obj.articles;
+    if (data === undefined) {
+      throw new Error("This is an error message.");
+    }
+    Organise(data, category);
+  } catch (error) {
+    // Organise(data, category);
+    console.log(error);
+  }
+  // console.log("here");
+};
+
+getNews("general");
+//******************************************************************************************************************************* */
