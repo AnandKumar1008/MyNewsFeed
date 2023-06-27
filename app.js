@@ -171,7 +171,7 @@ const getNews = async (category) => {
   Organise(data, category);
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiey=${API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
     );
     const obj = await response.json();
     data = obj.articles;
