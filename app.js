@@ -167,22 +167,22 @@ const API_KEY = "60365b29851d46a58ec24f1c75e1f275";
 const url2 = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${API_KEY}`;
 
 const getNews = async (category) => {
-  let data = Allnews[category];
-  setTimeout(() => {
-    Organise(data, category);
-  }, 1000);
   try {
     const response = await fetch(
       `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
     );
     const obj = await response.json();
-    data = obj.articles;
-    if (data === undefined) {
+    const item = obj.articles;
+    if (item === undefined) {
       throw new Error("This is an error message.");
     }
-    Organise(data, category);
+    Organise(item, category);
   } catch (error) {
     // Organise(data, category);
+    const data = Allnews[category];
+    setTimeout(() => {
+      Organise(data, category);
+    }, 1000);
     console.log(error);
   }
   // console.log("here");
