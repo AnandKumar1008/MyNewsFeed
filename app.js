@@ -168,7 +168,9 @@ const url2 = `https://newsapi.org/v2/top-headlines?country=in&category=business&
 
 const getNews = async (category) => {
   let data = Allnews[category];
-  Organise(data, category);
+  setTimeout(() => {
+    Organise(data, category);
+  }, 1000);
   try {
     const response = await fetch(
       `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
