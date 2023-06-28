@@ -1,100 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEW NEWS</title>
-    <link rel="stylesheet" href="newNewsPage.css">
+    <link rel="stylesheet" href="newNewsPage.css" />
 
+    <script
+      src="https://kit.fontawesome.com/32cf8dc179.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://kit.fontawesome.com/32cf8dc179.js" crossorigin="anonymous"></script>
-    <script defer src="app.js" type="module"> </script>
-</head>
+    <script defer src="app.js" type="module"></script>
+  </head>
 
-<body>
+  <body>
     <div class="heading-container">
-        <span class="span1">
-            <h2>MY NEWSFEED</h2>
+      <span class="span1" id="news_feed-home">
+        <a href="/index.html" class="news_feed-main">MY NEWSFEED</a>
+      </span>
+      <div class="news-heading">
+        <span class="span3">
+          <a href="savedNewsPage.html">
+            <button>LOAD SAVED NEWS</button>
+          </a>
         </span>
-        <div class="news-heading">
-          
-            <span class="span3">
-                <a href="savedNewsPage.html">
-                <button>
-                        LOAD SAVED NEWS
-                    </button>
-                </a>
-            </span>
-        </div>
-        <h3 class="category"> SELECT CATEGORY</h3>
+      </div>
+      <h3 class="category">SELECT CATEGORY</h3>
 
-        <div class="topics">
-
-            <span>BUSINESS</span><span>Entertainment</span><span>General</span><span>Health</span><span>Sports</span><span>Technology</span><span>SCIENCE</span>
-        </div>
-
+      <div class="topics">
+        <span>BUSINESS</span><span>Entertainment</span><span>General</span
+        ><span>Health</span><span>Sports</span><span>Technology</span
+        ><span>SCIENCE</span>
+      </div>
     </div>
     <div class="main-container">
+      <div class="container">
+        <section class="new-news">
+          <div id="add-news" class="add-news">
+            <div class="data">
+              <img src="krishna.jpg" alt="" class="image" />
+              <div class="news-detail">
+                <h5>MADHAV</h5>
+                <h6>CATEGORY</h6>
+              </div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
+              distinctio id eveniet optio asperiores praesentium delectus
+              maiores culpa sint tempore.
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="data">
+              <img src="krishna.jpg" alt="" class="image" />
+              <div class="news-detail">
+                <h5>MADHAV</h5>
+                <h6>CATEGORY</h6>
+              </div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
+              distinctio id eveniet optio asperiores praesentium delectus
+              maiores culpa sint tempore.
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="data">
+              <img src="krishna.jpg" alt="" class="image" />
+              <div class="news-detail">
+                <h5>MADHAV</h5>
+                <h6>CATEGORY</h6>
+              </div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
+              distinctio id eveniet optio asperiores praesentium delectus
+              maiores culpa sint tempore.
+              <i class="fa-regular fa-heart"></i>
+            </div>
 
-        <div class="container">
+            <div class="data">
+              <div class="news-detail">
+                <h5>MADHAV</h5>
+                <h6>CATEGORY</h6>
+              </div>
 
-
-            <section class="new-news">
-
-                <div id="add-news" class="add-news">
-
-                    <div class="data">
-                        <img src="krishna.jpg" alt="" class="image">
-                        <div class="news-detail">
-                            <h5>MADHAV</h5>
-                            <h6>CATEGORY</h6>
-                        </div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio id eveniet
-                        optio asperiores praesentium delectus maiores culpa sint tempore.
-                        <i class="fa-regular fa-heart"></i>
-                    </div >
-                    <div class="data">
-                        <img src="krishna.jpg" alt="" class="image">
-                        <div class="news-detail">
-                            <h5>MADHAV</h5>
-                            <h6>CATEGORY</h6>
-                        </div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio id eveniet
-                        optio asperiores praesentium delectus maiores culpa sint tempore.
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="data">
-                        <img src="krishna.jpg" alt="" class="image">
-                        <div class="news-detail">
-                            <h5>MADHAV</h5>
-                            <h6>CATEGORY</h6>
-                        </div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio id eveniet
-                        optio asperiores praesentium delectus maiores culpa sint tempore.
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-
-                    <div class="data">
-                        <div class="news-detail">
-                            <h5>MADHAV</h5>
-                            <h6>CATEGORY</h6>
-                        </div>
-
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, ab! Et, optio. Error nulla
-                        autem
-                        minus, nam mollitia voluptates officia quaerat sint hic, eius, quisquam fugiat est quis
-                        perspiciatis? Recusandae?
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="data"></div>
-                </div>
-            </section>
-        </div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa,
+              ab! Et, optio. Error nulla autem minus, nam mollitia voluptates
+              officia quaerat sint hic, eius, quisquam fugiat est quis
+              perspiciatis? Recusandae?
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="data"></div>
+          </div>
+        </section>
+      </div>
     </div>
+    <!-- ******FOOTER *************** -->
+    <section class="news_feed-footer">
+      <div class="news_feed-footer_top">
+        <p>About us</p>
+        <hr />
+        <p>Contact us</p>
+        <hr />
 
+        <p>Advertise with us</p>
+        <hr />
 
-</body>
-
+        <p>Complaint Redressal</p>
+        <hr />
+        <p>Investors</p>
+        <hr />
+        <p>Investors</p>
+        <hr />
+        <p>Rate Card</p>
+        <hr />
+        <p>Privacy Policy</p>
+        <hr />
+        <p>Terms and Conditions</p>
+        <hr />
+        <p>Correction Policy</p>
+        <hr />
+        <p>Press release</p>
+        <hr />
+        <p>T&Cs MYFeed HD Contest</p>
+      </div>
+      <hr />
+      <div class="news_feed-footer_icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+      <hr />
+      <div class="news_feed-footer_copyright">
+        <p>
+          Copyright © 2023 Living Media India Limited. For reprint rights:
+          Syndications Today
+        </p>
+      </div>
+    </section>
+  </body>
 </html>

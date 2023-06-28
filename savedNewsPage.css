@@ -7,6 +7,13 @@
   font-family: "Bebas Neue", cursive;
   font-family: "Signika Negative", sans-serif;
 }
+.news_feed-main {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #cd1818;
+}
 body {
   font-family: "Bebas Neue", cursive;
   font-family: "Signika Negative", sans-serif;
@@ -88,4 +95,52 @@ i {
 
 .data {
   max-width: 100%;
+}
+.saveNews {
+  min-height: 100vh;
+}
+
+/* FOOTER CSS***************************************************** */
+
+.news_feed-footer {
+  background-color: black;
+  color: white;
+}
+.news_feed-footer_top {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.news_feed-footer_top p {
+  cursor: pointer;
+}
+.news_feed-footer_icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+.news_feed-footer_icons i {
+  color: white;
+  font-size: 2rem;
+}
+.news_feed-footer_icons i:nth-of-type(1) {
+  color: rgb(228, 76, 102);
+  /* background-color: red; */
+}
+.news_feed-footer_icons i:nth-of-type(2) {
+  color: blue;
+}
+.news_feed-footer_icons i:nth-of-type(3) {
+  color: skyblue;
+}
+.news_feed-footer_icons i:nth-of-type(4) {
+  color: red;
+}
+.news_feed-footer_copyright {
+  text-align: center;
+  padding: 1rem;
 }

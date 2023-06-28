@@ -16,6 +16,8 @@ const Allnews = {
   sports,
   technology,
 };
+// const newsFeed=document.getElementById('news_feed-home');
+
 const url = "https://inshorts.deta.dev/news?";
 const newUrlKey = "60365b29851d46a58ec24f1c75e1f275";
 //URL OF THE API
