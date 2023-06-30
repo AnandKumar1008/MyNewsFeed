@@ -144,3 +144,11 @@ i {
   text-align: center;
   padding: 1rem;
 }
+.searchItem {
+  /* text-align: center; */
+  margin: 1rem;
+}
+.searchItem input {
+  width: 40%;
+  padding: 1rem;
+}

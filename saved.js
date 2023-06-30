@@ -2,11 +2,34 @@
 const save = document.getElementById("saveNews");
 window.addEventListener("load", makingSavedNews);
 // console.log(icon);
+const counter = document.getElementById("count");
+const searchItem = document.getElementById("searchItem");
+searchItem.addEventListener("input", () => {
+  // let newses=document.getElementById('savedNews');
+  // newses='';
+  const value = searchItem.value;
+  console.log(value);
+  const data = JSON.parse(localStorage.getItem("savedNews"));
+  console.log(data);
+  const newArray = [];
+  data.forEach((item) => {
+    // console.log(item);
+    if (item.categ.toLowerCase().includes(value)) {
+      newArray.push(item);
+    }
+  });
+  console.log(newArray);
+  // makingSavedNews(newArray);
+  render(newArray);
+});
 
 function makingSavedNews() {
   save.innerHTML = "";
   const savedNews = JSON.parse(localStorage.getItem("savedNews"));
+
   const container = document.createElement("div");
+  const size = savedNews.length;
+  counter.innerHTML = `${size}`;
   savedNews.forEach((element) => {
     const div = document.createElement("div");
     // div.className="data";
@@ -90,3 +113,49 @@ function refresh() {
     });
   });
 }
+//***************SEARCH ITEM********************************************** */
+const render = (savedNews) => {
+  save.innerHTML = "";
+  const container = document.createElement("div");
+  const size = savedNews.length;
+  counter.innerHTML = `${size}`;
+  savedNews.forEach((element) => {
+    const div = document.createElement("div");
+    // div.className="data";
+    div.classList.add("data");
+    const image = document.createElement("img");
+    image.classList.add("image");
+    image.setAttribute("src", element.imageUrl);
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", element.link);
+    anchor.append(image);
+    div.append(anchor);
+
+    const detail = document.createElement("div");
+    detail.className = "news-detail";
+    const h5 = document.createElement("h5");
+    h5.innerText = element.athr;
+    const h6 = document.createElement("h6");
+    h6.innerText = element.categ;
+    detail.append(h5);
+    detail.append(h6);
+    div.append(detail);
+    //console.log(element.content);
+    const para = document.createElement("p");
+    para.innerText = element.content;
+    //let node=document.createTextNode(element.content);
+    div.append(para);
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-heart";
+    div.append(icon);
+
+    container.append(div);
+  });
+  container.classList.add("news-container");
+  save.append(container);
+  if (savedNews.length === 0) {
+    save.innerText = "Nothing is saved😊";
+    save.style.textAlign = "center";
+  }
+  refresh();
+};
