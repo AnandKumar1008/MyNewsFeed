@@ -85,6 +85,10 @@ i {
   width: 100%;
   margin: 0px auto;
 }
+.data {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 2rem;
+}
 .add-news {
   margin-top: 20px;
   /* margin: 2rem; */
@@ -99,6 +103,7 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 0px 20px;
+  /* border: 2px solid red; */
 }
 .news-detail {
   display: flex;
@@ -160,6 +165,9 @@ img {
 .news_feed-footer_copyright {
   text-align: center;
   padding: 1rem;
+}
+.readMore {
+  color: #068da9;
 }
 /* **************FOR SCREEN******************************* */
 @media only screen and (max-width: 1000px) {

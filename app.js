@@ -59,8 +59,12 @@ function refresh() {
       console.log(parent);
       // now going for the parent element of the icon which has been clikced
       const newsContent = parent.querySelector("p").textContent;
+      // const readMore=parent.querySelector('p>a');
+      // readMore.
+      // const readMore=parent.querySelector("p>a");
+      // readMore.setAttribute
       const publishedAt = parent.getAttribute("id");
-      console.log(publishedAt);
+      // console.log(publishedAt);
 
       // making paragraph element to store it in the local storage
 
@@ -124,15 +128,20 @@ const Organise = (data, category) => {
     var div = document.createElement("div");
     div.classList.add("news-detail");
     var h5 = document.createElement("h5");
-    h5.innerText = `${data[x].author}`;
+    h5.innerText = `${data[x].author || "Author"}`;
     div.append(h5);
     div.append(h6);
     const para = document.createElement("p");
     // console.log(h5,h6);
-    para.innerText = data[x].content;
+    const readMore = document.createElement("a");
+    readMore.classList.add("readMore");
+    readMore.innerHTML = `Readmore`;
+    readMore.setAttribute("href", data[x].url);
+    para.innerText = data[x]?.content?.slice(0, -14) || "" + " ...";
     // para.setAttribute("id", data[x].publishedAt);
     //var node=document.createTextNode();
     //console.log(div);
+    para.appendChild(readMore);
     content.append(anchor);
     content.append(div);
     content.append(para);

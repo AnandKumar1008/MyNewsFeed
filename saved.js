@@ -14,7 +14,7 @@ searchItem.addEventListener("input", () => {
   const newArray = [];
   data.forEach((item) => {
     // console.log(item);
-    if (item.categ.toLowerCase().includes(value)) {
+    if (item.categ.toLowerCase().slice(8).includes(value)) {
       newArray.push(item);
     }
   });
@@ -53,7 +53,12 @@ function makingSavedNews() {
     div.append(detail);
     //console.log(element.content);
     const para = document.createElement("p");
-    para.innerText = element.content;
+    para.classList.add("textContent");
+    para.innerText = element.content.slice(0, -8);
+    const readMore = document.createElement("a");
+    readMore.innerText = "ReadMore";
+    readMore.setAttribute("href", element.link);
+    para.append(readMore);
     //let node=document.createTextNode(element.content);
     div.append(para);
     const icon = document.createElement("i");
@@ -142,7 +147,12 @@ const render = (savedNews) => {
     div.append(detail);
     //console.log(element.content);
     const para = document.createElement("p");
-    para.innerText = element.content;
+    para.innerText = element.content.slice(0, -8);
+    const readMore = document.createElement("a");
+    readMore.innerText = "ReadMore";
+    readMore.setAttribute("href", element.link);
+    para.append(readMore);
+
     //let node=document.createTextNode(element.content);
     div.append(para);
     const icon = document.createElement("i");

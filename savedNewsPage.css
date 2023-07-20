@@ -66,6 +66,11 @@ body {
 .data {
   height: 100%;
   /* border: 2px solid red; */
+  /* .data { */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  padding-bottom: 2rem;
+  margin: 2rem;
+  /* margin-bottom: 1rem; */
 }
 img {
   max-width: 100%;
@@ -76,8 +81,10 @@ img {
 .news-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 10px 20px;
+  gap: 16px;
+  margin: 10px 0;
+  margin-bottom: 5rem;
+  width: 100%;
 }
 i:hover {
   cursor: pointer;
@@ -101,7 +108,10 @@ i {
 }
 
 /* FOOTER CSS***************************************************** */
-
+.textContent a {
+  color: #068da9;
+  text-decoration: none;
+}
 .news_feed-footer {
   background-color: black;
   color: white;
@@ -151,4 +161,7 @@ i {
 .searchItem input {
   width: 40%;
   padding: 1rem;
+}
+a {
+  text-decoration: none;
 }
