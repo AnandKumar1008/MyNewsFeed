@@ -1,25 +1,20 @@
-//const body=document.getElementById('saved-body');
 const save = document.getElementById("saveNews");
 window.addEventListener("load", makingSavedNews);
-// console.log(icon);
+
 const counter = document.getElementById("count");
 const searchItem = document.getElementById("searchItem");
 searchItem.addEventListener("input", () => {
-  // let newses=document.getElementById('savedNews');
-  // newses='';
   const value = searchItem.value;
   console.log(value);
   const data = JSON.parse(localStorage.getItem("savedNews"));
   console.log(data);
   const newArray = [];
   data.forEach((item) => {
-    // console.log(item);
     if (item.categ.toLowerCase().slice(8).includes(value)) {
       newArray.push(item);
     }
   });
   console.log(newArray);
-  // makingSavedNews(newArray);
   render(newArray);
 });
 
@@ -32,7 +27,6 @@ function makingSavedNews() {
   counter.innerHTML = `${size}`;
   savedNews.forEach((element) => {
     const div = document.createElement("div");
-    // div.className="data";
     div.classList.add("data");
     const image = document.createElement("img");
     image.classList.add("image");
@@ -51,7 +45,6 @@ function makingSavedNews() {
     detail.append(h5);
     detail.append(h6);
     div.append(detail);
-    //console.log(element.content);
     const para = document.createElement("p");
     para.classList.add("textContent");
     para.innerText = element.content.slice(0, -8);
@@ -59,7 +52,6 @@ function makingSavedNews() {
     readMore.innerText = "ReadMore";
     readMore.setAttribute("href", element.link);
     para.append(readMore);
-    //let node=document.createTextNode(element.content);
     div.append(para);
     const icon = document.createElement("i");
     icon.className = "fa-solid fa-heart";
@@ -74,16 +66,11 @@ function makingSavedNews() {
     save.style.textAlign = "center";
   }
   refresh();
-  // console.log(save);
 }
 
 function refresh() {
   var icon = document.querySelectorAll("i");
-  // icon.addEventListener('click', function () {
 
-  //   icon.classList.toggle('fa-regular');
-  //   icon.classList.toggle('fa-solid');
-  // });
   icon.forEach((ion) => {
     ion.addEventListener("click", () => {
       ion.classList.toggle("fa-regular");

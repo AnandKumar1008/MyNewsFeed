@@ -16,11 +16,10 @@ const Allnews = {
   sports,
   technology,
 };
-// const newsFeed=document.getElementById('news_feed-home');
 
 const url = "https://inshorts.deta.dev/news?";
 const newUrlKey = "60365b29851d46a58ec24f1c75e1f275";
-//URL OF THE API
+
 const Img =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0XGcgZivIDeGqLE0_ZSBARUIdHLJJ9NHQIYPy7zpUt1bbtU_5YpcZNHzinMXbtKVQMI&usqp=CAU";
 const select = document.querySelectorAll(".topics>span");
@@ -30,7 +29,6 @@ const addNews = document.getElementById("add-news"); //selecting id element of a
 const destination = window.open("savedNewsPage.html"); //
 const save = document.getElementById("saveNews"); //get element having name of saveNews
 select.forEach((span) => {
-  //adding event listener to all span elements under topics class
   span.addEventListener("click", () => {
     select.forEach((element) => {
       element.style.backgroundColor = "#FF6969";
@@ -51,40 +49,24 @@ function refresh() {
     ion.addEventListener("click", () => {
       ion.classList.toggle("fa-regular");
       ion.classList.toggle("fa-solid");
-      // this will toggle the class of the icon
       let savedNews = JSON.parse(localStorage.getItem("savedNews")) || [];
-      // saved to read later news which are liked
 
       const parent = ion.parentElement;
       console.log(parent);
-      // now going for the parent element of the icon which has been clikced
       const newsContent = parent.querySelector("p").textContent;
-      // const readMore=parent.querySelector('p>a');
-      // readMore.
-      // const readMore=parent.querySelector("p>a");
-      // readMore.setAttribute
-      const publishedAt = parent.getAttribute("id");
-      // console.log(publishedAt);
 
-      // making paragraph element to store it in the local storage
+      const publishedAt = parent.getAttribute("id");
 
       const author = parent.querySelector("h5");
       const anchor = parent.querySelector("a");
-      //  console.log(parent)
+
       const href = anchor.getAttribute("href");
       const img = parent.querySelector("a>img");
       const src = img.getAttribute("src");
-      // console.log(img);
-      //  console.log(anchor);
-      //for author oof the news
 
       const category = parent.querySelector("h6");
 
-      // for category of the new to which it belongs to
-
       const newsIndex = savedNews.findIndex((item) => item.link === href);
-
-      //index of the news to delete it when ever it is clicked
 
       if (newsIndex === -1) {
         savedNews.push({
@@ -105,7 +87,6 @@ function refresh() {
 // *******************************************************************************************************************************---
 
 const Organise = (data, category) => {
-  // console.log(data);
   var mainDiv = document.createElement("div");
   addNews.innerHTML = "";
 
@@ -117,14 +98,12 @@ const Organise = (data, category) => {
     const img = document.createElement("img");
     img.className = "image";
     const url = data[x].urlToImage || Img;
-    // console.log(url);
-    // console.log(url);
+
     img.setAttribute("src", `${url}`);
-    // console.log(img.src);
     anchor.append(img);
 
     h6.innerText = `CATEGORY:${category.toUpperCase()}`;
-    content.classList.add("data"); //class is given
+    content.classList.add("data");
     var div = document.createElement("div");
     div.classList.add("news-detail");
     var h5 = document.createElement("h5");
@@ -132,27 +111,22 @@ const Organise = (data, category) => {
     div.append(h5);
     div.append(h6);
     const para = document.createElement("p");
-    // console.log(h5,h6);
+
     const readMore = document.createElement("a");
     readMore.classList.add("readMore");
     readMore.innerHTML = `Readmore`;
     readMore.setAttribute("href", data[x].url);
     para.innerText = data[x]?.content?.slice(0, -14) || "" + " ...";
-    // para.setAttribute("id", data[x].publishedAt);
-    //var node=document.createTextNode();
-    //console.log(div);
+
     para.appendChild(readMore);
     content.append(anchor);
     content.append(div);
     content.append(para);
-    // content.setAttribute("id", data[x].publishedAt);
-    // var icon=document.createTextNode(`${<i class="fa-regular fa-heart"></i>}`);
     const icon = document.createElement("i");
     icon.className = "fa-regular fa-heart";
     const savedNews = JSON.parse(localStorage.getItem("savedNews")) || [];
 
     savedNews.forEach((element) => {
-      //console.log(element.id,data.data[x].id);
       if (element.link === data[x].url) {
         icon.className = "fa-solid fa-heart";
       }
@@ -160,13 +134,9 @@ const Organise = (data, category) => {
 
     content.append(icon);
     mainDiv.append(content);
-    // savedNews.splice(0,4);
-    // savedNews.splice(0,100);
   }
   mainDiv.classList.add("news-container");
-  // const addNews=document.getElementById("add-news");
 
-  // savedNews=[];
   addNews.append(mainDiv);
 
   refresh();
@@ -174,7 +144,7 @@ const Organise = (data, category) => {
 //****************************************************************************************************** */
 
 const API_KEY = "60365b29851d46a58ec24f1c75e1f275";
-// const category=''
+
 const url2 = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${API_KEY}`;
 
 const getNews = async (category) => {
@@ -189,14 +159,12 @@ const getNews = async (category) => {
     }
     Organise(item, category);
   } catch (error) {
-    // Organise(data, category);
     const data = Allnews[category];
     setTimeout(() => {
       Organise(data, category);
     }, 1000);
     console.log(error);
   }
-  // console.log("here");
 };
 
 getNews("general");
